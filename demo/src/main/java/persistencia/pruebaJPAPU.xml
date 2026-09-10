@@ -1,0 +1,9 @@
+<persistence-unit name="pruebaJPAPU">
+
+    <class>logica.Alumno</class>
+
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <properties>
+    </properties>
+
+</persistence-unit>

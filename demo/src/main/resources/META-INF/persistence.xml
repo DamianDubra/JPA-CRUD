@@ -1,30 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
-             https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
-             version="3.2">
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
 
-    <persistence-unit name="JPA_CRUD">
+    <persistence-unit name="pruebaJPAPU">
 
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <provider>
+            org.hibernate.jpa.HibernatePersistenceProvider
+        </provider>
+
+        <!-- Entidades -->
+        <class>logica.Alumno</class>
 
         <properties>
 
-            <property name="jakarta.persistence.jdbc.driver"
+            <!-- Base de datos -->
+            <property name="javax.persistence.jdbc.driver"
                       value="com.mysql.cj.jdbc.Driver"/>
 
-            <property name="jakarta.persistence.jdbc.url"
+            <property name="javax.persistence.jdbc.url"
                       value="jdbc:mysql://localhost:3306/curso_jpa?serverTimezone=UTC"/>
 
-            <property name="jakarta.persistence.jdbc.user"
+            <property name="javax.persistence.jdbc.user"
                       value="root"/>
 
-            <property name="jakarta.persistence.jdbc.password"
+            <property name="javax.persistence.jdbc.password"
                       value="root"/>
 
+            <!-- Hibernate -->
             <property name="hibernate.hbm2ddl.auto"
                       value="create"/>
+
+            <property name="hibernate.show_sql"
+                      value="true"/>
 
         </properties>
 
